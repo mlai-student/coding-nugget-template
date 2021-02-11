@@ -1,0 +1,128 @@
+\documentclass[nonacm,sigconf,fleqn,svgnames,screen]{acmart}
+\input{preamble}
+
+
+\begin{document}
+
+% set up pdf meta data
+\hypersetup{%
+  pdftitle={ML2R Coding Nuggets: Linear Programming},
+  pdfauthor={Pascal Welke and Christian Bauckhage},
+  pdfsubject={data science, machine learning, optimization, scientific python, numpy, scipy},
+  pdfkeywords={linear programming, robust regression, least absolute deviations}
+}
+
+
+\title[Linear Programming for Robust Regression]{ML2R Coding Nuggets \\ Linear Programming for Robust Regression}
+
+
+% This is how you define multiple authors
+\author[P. Welke]{Pascal Welke}
+\putORCID{0000-0002-2123-3781}
+\affiliation{
+  \institution{Machine Learning Rhine-Ruhr \\ University of Bonn}
+  \city{Bonn}
+  \state{Germany}
+}
+
+\author[C. Bauckhage]{Christian Bauckhage}
+\putORCID{0000-0001-6615-2128}
+\affiliation{
+  \institution{Machine Learning Rhine-Ruhr \\ Fraunhofer IAIS}
+  \city{St.~Augustin}
+  \state{Germany}
+}
+
+\begin{abstract}
+The ML2R Coding Nugget template defines a common look and feel for ML2R coding nuggets. 
+The source code of this document shows how to use the ML2R Coding Nugget Template to produce nice documents.
+\end{abstract}
+
+\maketitle
+
+
+
+\section{Introduction}
+Coding nuggets are currently (short) how-tos that show how to solve problems ``by foot'' in practice.
+The typical structure of such a paper consists of motivating a (machine learning) problem, showing how to formulate this problem in a particular way and then showing how to solve it practically using existing methods. 
+
+Examples include  ``Solving Linear Programming Problems'' \cite{Welke2020-SLP} and ``Linear Programming for Robust Regression'' \cite{Welke2020-SLP2}.
+In the latter example, e.g. we show how to fit a linear model to data by minimizing least absolute deviations, instead of the more common least squares. 
+To this end, we formulate the optimization problem, transform it to show that it can be solved by linear programming and then solve it in \keyword{python} using methods from \keyword{numpy} and \keyword{scipy} alone.  
+
+\section{Technical Details}
+\verb+preamble.tex+ contains several imports and definitions. 
+There is a part marked optional that you can change, remove or add to as you please. 
+Please refrain from changing the part, however, that is marked as non-optional.
+Below we give a short introduction to 
+
+\subsection{Colors}
+The preamble defines the ML2R corporate design colors that should be used throughout the document and within figures (cf. Fig.~\ref{colors}) to provide a common look and feel:
+
+\vspace{0.5em}
+\begin{center}
+\begin{tabular}{lcl}
+\textcolor{ml2rblu}{blue} & : & \textcolor{ml2rblu}{ml2rblu} \\
+\textcolor{ml2ryel}{yellow} & : & \textcolor{ml2ryel}{ml2ryel} \\
+\textcolor{ml2rgrn}{green} & : & \textcolor{ml2rgrn}{ml2rgrn} \\
+\textcolor{ml2rtrq}{turquoise} & : & \textcolor{ml2rtrq}{ml2rtrq} \\
+ \end{tabular} 
+\end{center}
+
+\begin{figure}
+\begin{tikzpicture}
+\node[regular polygon, regular polygon sides=6, draw,
+inner sep=0.5cm, draw=ml2rblu, fill=ml2rblu] (blu) at (0,0) {};
+\node[regular polygon, regular polygon sides=6, draw,
+inner sep=0.5cm, draw=ml2ryel, fill=ml2ryel] (yel) at (3,0) {};
+\node[regular polygon, regular polygon sides=6, draw,
+inner sep=0.5cm, draw=ml2rgrn, fill=ml2rgrn] (grn) at (1.5,3) {};
+\node[regular polygon, regular polygon sides=6, draw,
+inner sep=0.5cm, draw=ml2rtrq, fill=ml2rtrq] (trq) at (4.5,3) {};
+\node[above=3mm of blu.north east] {\textcolor{ml2rblu}{ml2rblu}};
+\node[above=3mm of yel.north east] {\textcolor{ml2ryel}{ml2ryel}};
+\node[below=3mm of grn.south east] {\textcolor{ml2rgrn}{ml2rgrn}};
+\node[below=3mm of trq.south east] {\textcolor{ml2rtrq}{ml2rtrq}};
+\end{tikzpicture}
+\caption{A figure with our corporate design colors}
+\label{colors}
+\end{figure}
+
+\subsection{Python Code and keywords}
+
+Python code with pretty printing is supported. 
+Inline code looks like this:
+\begin{pythontxt}
+vecWLAD = result.x[:m]
+print('w0 =',vecWLAD[0])
+print('w1 =',vecWLAD[1])
+\end{pythontxt}
+
+An example of a longer, floating python code environment can be found in Listing~\ref{code}.
+
+
+\begin{python}[float=t!, caption={setting up a linear programming problem}, label={code}, emph={}, numbers=left, numbersep=5pt]
+matA = np.zeros((2*n, m+n))
+matA[:n,:m] = +matF.T
+matA[n:,:m] = -matF.T
+matA[:n,m:] = -np.eye(n)
+matA[n:,m:] = -np.eye(n)
+
+vecB = np.zeros(2*n)
+vecB[:n] = +vecY
+vecB[n:] = -vecY
+
+vecC = np.hstack((np.zeros(m), np.ones(n)))
+\end{python}
+
+
+\section*{Acknowledgments} % should always be present
+
+This material was produced within the Competence Center for Machine Learning Rhine-Ruhr (\href{https://www.ml2r.de}{\bf ML2R}) which is funded by the Federal Ministry of Education and Research of Germany (grant no. 01|S18038C). The authors gratefully acknowledge this support.
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{literature}
+
+
+\end{document}

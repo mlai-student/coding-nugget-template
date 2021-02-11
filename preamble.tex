@@ -1,0 +1,201 @@
+%%%%%%%%% DO NOT ALTER THIS, OPTIONAL PART STARTS BELOW %%%%%%%%%%%%
+
+%%% Disable some standard ACM things that we don't want to see
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\setcopyright{none}
+\copyrightyear{none}
+\acmYear{none}
+\acmDOI{none}
+
+
+%%% ML2R colors
+\definecolor{ml2rblu}{rgb}{0.02,0.27,0.45}
+\definecolor{ml2ryel}{rgb}{0.98,0.72,0.18}
+\definecolor{ml2rgrn}{rgb}{0.50,0.71,0.18}
+\definecolor{ml2rtrq}{rgb}{0.00,0.57,0.57}
+
+%%% not yet imported by ACM style
+% \usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[font=footnotesize]{subfig}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{fixltx2e}
+\usepackage{nicefrac}
+
+\usepackage{wasysym}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, positioning}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\renewcommand{\algorithmiccomment}[1]{{\color{DarkRed!90}// #1}}
+
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  urlcolor=ml2rtrq,
+  linkcolor=ml2rtrq,
+  citecolor=ml2rtrq,
+  bookmarks=false}
+
+
+\usepackage{fancyvrb} 
+\usepackage{listings}
+% Python style / environment for highlighting in "figures"
+\lstdefinestyle{pythonstyle}{%
+  language=Python,
+  tabsize=4,
+  backgroundcolor=\color{Gray!10},
+  basicstyle=\ttfamily\scriptsize,
+  stringstyle=\color{ForestGreen},
+  keywordstyle=\color{BlueViolet},
+  commentstyle=\itshape\color{DarkRed!90},
+  identifierstyle=,
+  emphstyle=\color{Blue},
+  frame=lines,	
+  showstringspaces=false,
+  morekeywords={range, len, self, other, lambda, from, import, as, False, True, 
+  enumerate, xrange, map, list, set, float, int, min, max, sorted, None},
+  fancyvrb=true,
+}
+\lstnewenvironment{python}[1][]{\lstset{style=pythonstyle,#1}}{}
+
+% Python style / environment for highlighting in body
+\lstdefinestyle{pythonstyletxt}{%
+  language=Python,
+  tabsize=4,
+  basicstyle=\ttfamily\small,
+  stringstyle=\color{ForestGreen},
+  keywordstyle=\color{BlueViolet},
+  commentstyle=\itshape\color{DarkRed!90},
+  identifierstyle=,
+  emphstyle=\color{Blue},
+  %frame=l,	
+  xleftmargin=1em,
+  showstringspaces=false,
+  morekeywords={range, len, self, other, lambda, from, import, as, False, True, 
+  enumerate, xrange, map, list, set, float, int, min, max, sorted, with, None},
+}
+\lstnewenvironment{pythontxt}[1][]{\lstset{style=pythonstyletxt,#1}}{}
+
+% Python style / environment for small size highlighting in body
+\lstdefinestyle{pythonstyletxtsmall}{%
+  language=Python,
+  tabsize=4,
+  basicstyle=\ttfamily\scriptsize,
+  stringstyle=\color{ForestGreen},
+  keywordstyle=\color{BlueViolet},
+  commentstyle=\itshape\color{DarkRed!90},
+  identifierstyle=,
+  emphstyle=\color{Blue},
+  %frame=l,	
+  xleftmargin=1em,
+  showstringspaces=false,
+  morekeywords={range, len, self, other, lambda, from, import, as, False, True, 
+  enumerate, xrange, map, list, set, float, int, min, max, sorted, None},
+}
+\lstnewenvironment{pythontxtsmall}[1][]{\lstset{style=pythonstyletxtsmall,#1}}{}
+
+
+\newcommand{\putORCID}[1]{
+\authornote{\href{https://orcid.org/#1}{\includegraphics[width=2ex]{ORCID.png}} \href{https://orcid.org/#1}{#1}}
+\orcid{#1}}
+
+
+
+%%%%%%%% OPTIONAL %%%%%%%%%%%%%%%
+
+% only used for fig colors, may be removed if you don't need it
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, positioning}
+
+%%% define convience commands
+% python stuff
+\newcommand{\Py}{\emph{Python}}
+\newcommand{\PY}{\emph{Python }}
+\newcommand{\NP}{\emph{NumPy }}
+\newcommand{\Np}{\emph{NumPy}}
+\newcommand{\SP}{\emph{SciPy }}
+\newcommand{\Sp}{\emph{SciPy}}
+\newcommand{\MP}{\emph{Matplotlib }}
+\newcommand{\Mp}{\emph{Matplotlib}}
+\newcommand{\NX}{\emph{NetworkX }}
+\newcommand{\Nx}{\emph{NetworkX}}
+\newcommand{\QT}{\emph{QuTiP }}
+\newcommand{\Qt}{\emph{QuTiP}}
+
+% text highlighting
+\newcommand{\alert}[1]{\emph{#1}}
+\newcommand{\ALERT}[1]{{\color{red}#1}}
+\newcommand{\keyword}[1]{\emph{\texttt{\color{blue}#1}}}
+
+% vectors, matrices, and tensors
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\ten}[1]{\bm{\mathcal{#1}}}
+
+% transposition
+\newcommand{\trn}[1]{#1^\intercal}
+
+%%% inner, outer products and squared Euclidean norms/distances
+\newcommand{\IPA}[2]{\Bigl \langle #1 \bigm| #2 \Bigr \rangle}
+\newcommand{\Ipa}[2]{\bigl \langle #1 \bigm| #2 \bigr \rangle}
+\newcommand{\ipa}[2]{\left \langle #1 \,\middle|\, #2 \right \rangle}
+%\newcommand{\ipt}[2]{#1^{\scriptscriptstyle T} #2}
+\newcommand{\ipt}[2]{\trn{#1} #2}
+%\newcommand{\ipt}[2]{#1^\intercal #2}
+%\newcommand{\ipt}[2]{#1^\top #2}
+%\newcommand{\ipt}[2]{#1^\mathsf{T} #2}
+\newcommand{\opt}[2]{#1 \trn{#2}}
+\newcommand{\nrm}[1]{\bigl \lVert #1 \bigr \rVert^2}
+\newcommand{\NRM}[1]{\Bigl \lVert #1 \Bigr \rVert^2}
+\newcommand{\dsq}[2]{\bigl \lVert #1 - #2 \bigr \rVert^2}
+\newcommand{\DSQ}[2]{\Bigl \lVert #1 - #2 \Bigr \rVert^2}
+\newcommand{\dist}[2]{\bigl \lVert #1 - #2 \bigr \rVert}
+\DeclareMathOperator*{\vbar}{\Bigr\rvert}
+
+%%% inner and outer product for indexed vectors
+\newcommand{\iipt}[2]{\trn{#1} #2^{\phantom{\intercal}}}
+\newcommand{\oipt}[2]{#1^{\phantom{\intercal}} \trn{#2}}
+
+%%% trace and rank operator
+\newcommand{\tr}[1]{\operatorname{tr} \bigl [ #1 \bigr ]}
+\newcommand{\TR}[1]{\operatorname{tr} \Bigl [ #1 \Bigr ]}
+\newcommand{\rk}[1]{\operatorname{rk} \bigl [ #1 \bigr ]}
+\newcommand{\RK}[1]{\operatorname{rk} \Bigl [ #1 \Bigr ]}
+\newcommand{\diag}[1]{\operatorname{diag} \bigl [ #1 \bigr ]}
+\newcommand{\DIAG}[1]{\operatorname{diag} \Bigl [ #1 \Bigr ]}
+
+%%% sets and optimization routines
+\newcommand{\set}[1]{\mathcal{#1}}
+\newcommand{\st}{\operatorname{s.\!t.}}
+\newcommand{\amin}[1]{\operatorname*{argmin}_{#1}}
+\newcommand{\amax}[1]{\operatorname*{argmax}_{#1}}
+
+\newcommand{\submax}[1]{#1_{\max}}
+
+%%% conditional independence and probability
+\newcommand{\ci}{\perp\!\!\!\perp}
+\newcommand{\prob}[1]{p\bigl( #1 \bigr)}
+\newcommand{\cprob}[2]{p\bigl( #1 \mid #2 \bigr)}
+
+%%% bras and kets
+\newcommand{\ket}[1]{\vert {#1} \rangle}
+\newcommand{\Ket}[1]{\big\vert {#1} \big\rangle}
+\newcommand{\bra}[1]{\langle {#1} \vert}
+\newcommand{\Bra}[1]{\big\langle {#1} \big\vert}
+\newcommand{\braket}[2]{\langle {#1} \vert {#2} \rangle}
+\newcommand{\Braket}[2]{\big\langle {#1} \big\vert {#2} \big\rangle}
+\newcommand{\ketbra}[2]{\vert {#1} \rangle \langle {#2} \vert}
+\newcommand{\Ketbra}[2]{\big\vert {#1} \big\rangle \big\langle {#2} \big\vert}
+
+\newcommand{\hdash}{\operatorname{\,{}---{}\,}}
+\renewcommand{\vdash}{\arrowvert}
+
