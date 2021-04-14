@@ -12,7 +12,7 @@ Go write your own coding nugget!
 
 ## What is this all about?
 
-We have started to publish ML2R Coding Nuggets on (ResearchGate)[https://www.researchgate.net/project/Machine-Learning-Rhine-Ruhr-ML2R] and on a (website of the University of Bonn)[https://mlai.cs.uni-bonn.de/teaching/lecturenotes] and are looking for volunteers to support and contribute to specific topics.
+We have started to publish ML2R Coding Nuggets on [ResearchGate](https://www.researchgate.net/project/Machine-Learning-Rhine-Ruhr-ML2R) and on a [website of the University of Bonn](https://mlai.cs.uni-bonn.de/teaching/lecturenotes) and are looking for volunteers to support and contribute to specific topics.
 
 Coding Nuggets are currently (short) how-tos that show how to solve problems “by foot” in practice. The typical structure of such a paper consists of motivating a (machine learning) problem, showing how-to formulate this problem in a particular way and then showing how to solve it practically using existing methods. Christian Bauckhage and Pascal Welke have already created two ML2R Coding Nuggets as an example (Solving Linear Programming Problems  & Linear Programming for Robust Regression).
 
@@ -21,7 +21,7 @@ So far, the ML2R Coding Nuggets will be published on ResearchGate and the Uni Bo
 
 ## So how to get started?
 
-- Choose a topic: There is a wide range of topics you can write about. For guidance and orientation, you can check out the (coding nuggets that already exist)[https://mlai.cs.uni-bonn.de/teaching/lecturenotes]
+- Choose a topic: There is a wide range of topics you can write about. For guidance and orientation, you can check out the [coding nuggets that already exist](https://mlai.cs.uni-bonn.de/teaching/lecturenotes)
 - Download this repository and start by editing [main.tex](main.tex). You will find some technical documentation in this file that should help you understanding the relevant commands.
 - Write your own ML2R Coding Nuggets.
 - Send the final version to [Christian Bauckhage](christian.bauckhage@iais.fraunhofer.de) and [Pascal Welke](welke@cs.uni-bonn.de) for publication on ResearchGate and the website.
