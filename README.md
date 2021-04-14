@@ -2,7 +2,10 @@
 # ML2R Coding Nugget Template
 
 This repository provides a LaTeX template and an example file to create "ML2R Coding Nuggets" in a common look and feel. 
-You can check out how the template will look [here](main.pdf). 
+You can check out how the template will look [here](main.pdf) or in the thumbnail below.
+(The thumbnail was created with [iconify.sh](iconify.sh)). 
+
+![thumbnail of a ML2R Coding nugget](main-icon.png)
 
 Go write your own coding nugget!
 
