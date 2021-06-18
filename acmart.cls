@@ -1265,8 +1265,14 @@ Computing Machinery]
     \g@addto@macro\@authornotes{%
       \stepcounter{footnote}\footnotetext{#1}}%
   \fi}
+\def\putORCID#1{%
+  \if@ACM@anonymous\else
+    \g@addto@macro\addresses{\@addORCID{~\href{https://orcid.org/#1}{\includegraphics[width=1.5ex]{ORCID.png}}}}%
+    % \g@addto@macro\@authornotes{%
+    %   \stepcounter{footnote}\footnotetext{\href{https://orcid.org/#1}{\includegraphics[width=2ex]{ORCID.png}}}}%
+  \fi}
 \newcommand\authornotemark[1][\relax]{%
-  \ifx#1\relax\relax\relax
+  \ifx#1\relax\relax\relax 
   \g@addto@macro\addresses{\@authornotemark}%
   \else
   \g@addto@macro\addresses{\@@authornotemark{#1}}%
@@ -2194,6 +2200,7 @@ Computing Machinery]
   \egroup}
 \def\@setaddresses{}
 \def\@authornotemark{\g@addto@macro\@currentauthors{\footnotemark\relax}}
+\def\@addORCID#1{\g@addto@macro\@currentauthors{#1\relax}}
 \def\@@authornotemark#1{\g@addto@macro\@currentauthors{\footnotemark[#1]}}
 \def\@mkteasers{%
   \ifx\@teaserfigures\@empty\else
