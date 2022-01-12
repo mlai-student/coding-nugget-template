@@ -1,6 +1,11 @@
+%% This is ml2rcn.cls, a class file for the ML2R Coding Nugget series.
 %%
-%% This is file `acmart.cls',
-%% generated with the docstrip utility.
+%% Small changes to appearance, default parameters, and ORCID handling by
+%% Pascal Welke <welke@cs.uni-bonn.de> 2022-01-12 
+%%
+%% This class is based on the file `acmart.cls',
+%% generated with the docstrip utility. It uses the following default
+%% acmart class parameters: [nonacm,sigconf,screen]
 %%
 %% The original source files were:
 %%
@@ -36,23 +41,23 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{acmart}
+\ProvidesClass{ml2rcn}
 [2018/12/16 v1.57 Typesetting articles for the Association for
 Computing Machinery]
-\def\@classname{acmart}
-\InputIfFileExists{acmart-preload-hook.tex}{%
+\def\@classname{ml2rcn}
+\InputIfFileExists{ml2rcn-preload-hook.tex}{%
   \ClassWarning{\@classname}{%
-    I am loading acmart-preload-hook.tex. You are fully responsible
+    I am loading ml2rcn-preload-hook.tex. You are fully responsible
     for any problems from now on.}}{}
 \RequirePackage{xkeyval}
 \RequirePackage{xstring}
-\define@choicekey*+{acmart.cls}{format}[\ACM@format\ACM@format@nr]{%
+\define@choicekey*+{ml2rcn.cls}{format}[\ACM@format\ACM@format@nr]{%
   manuscript, acmsmall, acmlarge, acmtog, sigconf, siggraph,
-  sigplan, sigchi, sigchi-a}[manuscript]{}{%
+  sigplan, sigchi, sigchi-a}[sigconf]{}{%
   \ClassError{\@classname}{The option format must be manuscript,
     acmsmall, acmlarge, acmtog, sigconf, siggraph,
     sigplan, sigchi or sigchi-a}}
-\def\@DeclareACMFormat#1{\DeclareOptionX{#1}{\setkeys{acmart.cls}{format=#1}}}
+\def\@DeclareACMFormat#1{\DeclareOptionX{#1}{\setkeys{ml2rcn.cls}{format=#1}}}
 \@DeclareACMFormat{manuscript}
 \@DeclareACMFormat{acmsmall}
 \@DeclareACMFormat{acmlarge}
@@ -63,15 +68,15 @@ Computing Machinery]
 \@DeclareACMFormat{sigchi}
 \@DeclareACMFormat{sigchi-a}
 \ExecuteOptionsX{format}
-\define@boolkey+{acmart.cls}[@ACM@]{screen}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{screen}[true]{%
   \if@ACM@screen
     \PackageInfo{\@classname}{Using screen mode}%
   \else
     \PackageInfo{\@classname}{Not using screen mode}%
   \fi}{\PackageError{\@classname}{The option screen can be either true or
     false}}
-\ExecuteOptionsX{screen=false}
-\define@boolkey+{acmart.cls}[@ACM@]{acmthm}[true]{%
+\ExecuteOptionsX{screen=true}
+\define@boolkey+{ml2rcn.cls}[@ACM@]{acmthm}[true]{%
   \if@ACM@acmthm
     \PackageInfo{\@classname}{Requiring acmthm}%
   \else
@@ -79,7 +84,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option acmthm can be either true or
     false}}
 \ExecuteOptionsX{acmthm=true}
-\define@boolkey+{acmart.cls}[@ACM@]{review}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{review}[true]{%
   \if@ACM@review
     \PackageInfo{\@classname}{Using review mode}%
     \AtBeginDocument{\@ACM@printfoliostrue}%
@@ -88,7 +93,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option review can be either true or
     false}}
 \ExecuteOptionsX{review=false}
-\define@boolkey+{acmart.cls}[@ACM@]{authorversion}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{authorversion}[true]{%
   \if@ACM@authorversion
     \PackageInfo{\@classname}{Using authorversion mode}%
   \else
@@ -96,7 +101,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option authorversion can be either true or
     false}}
 \ExecuteOptionsX{authorversion=false}
-\define@boolkey+{acmart.cls}[@ACM@]{nonacm}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{nonacm}[true]{%
   \if@ACM@nonacm
     \PackageInfo{\@classname}{Using nonacm mode}%
     \AtBeginDocument{\@ACM@printacmreffalse}%
@@ -107,12 +112,12 @@ Computing Machinery]
     \PackageInfo{\@classname}{Not using nonacm mode}%
   \fi}{\PackageError{\@classname}{The option nonacm can be either true or
     false}}
-\ExecuteOptionsX{nonacm=false}
-\define@boolkey+{acmart.cls}[@ACM@]{balance}[true]{}{%
+\ExecuteOptionsX{nonacm=true}
+\define@boolkey+{ml2rcn.cls}[@ACM@]{balance}[true]{}{%
   \PackageError{\@classname}{The option balance can be either true or
     false}}
 \ExecuteOptionsX{balance}
-\define@boolkey+{acmart.cls}[@ACM@]{natbib}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{natbib}[true]{%
   \if@ACM@natbib
     \PackageInfo{\@classname}{Explicitly selecting natbib mode}%
   \else
@@ -120,7 +125,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option natbib can be either true or
     false}}
 \ExecuteOptionsX{natbib=true}
-\define@boolkey+{acmart.cls}[@ACM@]{anonymous}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{anonymous}[true]{%
   \if@ACM@anonymous
     \PackageInfo{\@classname}{Using anonymous mode}%
   \else
@@ -128,7 +133,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option anonymous can be either true or
     false}}
 \ExecuteOptionsX{anonymous=false}
-\define@boolkey+{acmart.cls}[@ACM@]{timestamp}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{timestamp}[true]{%
   \if@ACM@timestamp
     \PackageInfo{\@classname}{Using timestamp mode}%
   \else
@@ -136,7 +141,7 @@ Computing Machinery]
   \fi}{\PackageError{\@classname}{The option timestamp can be either true or
     false}}
 \ExecuteOptionsX{timestamp=false}
-\define@boolkey+{acmart.cls}[@ACM@]{authordraft}[true]{%
+\define@boolkey+{ml2rcn.cls}[@ACM@]{authordraft}[true]{%
   \if@ACM@authordraft
     \PackageInfo{\@classname}{Using authordraft mode}%
     \@ACM@timestamptrue
@@ -161,7 +166,7 @@ Computing Machinery]
 \ifnum\ACM@format@nr=5\relax % siggraph
   \ClassWarning{\@classname}{The format siggraph is now obsolete.
     I am switching to sigconf.}
-  \setkeys{acmart.cls}{format=sigconf}
+  \setkeys{ml2rcn.cls}{format=sigconf}
 \fi
 \ifnum\ACM@format@nr=0\relax
   \@ACM@manuscripttrue
