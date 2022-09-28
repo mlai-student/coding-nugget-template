@@ -1,4 +1,4 @@
-\documentclass[fleqn,svgnames]{ml2rcn}
+\documentclass[fleqn,svgnames]{lamarrreport}
 \input{preamble}
 
 
@@ -13,14 +13,14 @@
 }
 
 
-\title[Linear Programming for Robust Regression]{ML2R Coding Nuggets \\ Linear Programming for Robust Regression}
+\title[Linear Programming for Robust Regression]{Lamarr Coding Nuggets \\ A Template}
 
 
 % This is how you define multiple authors
 \author[P. Welke]{Pascal Welke}
 \putORCID{0000-0002-2123-3781}
 \affiliation{
-  \institution{Machine Learning Rhine-Ruhr \\ University of Bonn}
+  \institution{Lamarr Institute \\ University of Bonn}
   \city{Bonn}
   \state{Germany}
 }
@@ -28,7 +28,7 @@
 \author[C. Bauckhage]{Christian Bauckhage}
 \putORCID{0000-0001-6615-2128}
 \affiliation{
-  \institution{Machine Learning Rhine-Ruhr \\ Fraunhofer IAIS}
+  \institution{Lamarr Institute \\ Fraunhofer IAIS}
   \city{St.~Augustin}
   \state{Germany}
 }
@@ -62,27 +62,27 @@ The preamble defines the ML2R corporate design colors that should be used throug
 \vspace{0.5em}
 \begin{center}
 \begin{tabular}{lcl}
-\textcolor{ml2rblu}{blue} & : & \textcolor{ml2rblu}{ml2rblu} \\
-\textcolor{ml2ryel}{yellow} & : & \textcolor{ml2ryel}{ml2ryel} \\
-\textcolor{ml2rgrn}{green} & : & \textcolor{ml2rgrn}{ml2rgrn} \\
-\textcolor{ml2rtrq}{turquoise} & : & \textcolor{ml2rtrq}{ml2rtrq} \\
+\textcolor{lmrrblu}{blue} & : & \textcolor{lmrrblu}{lmrrblu} \\
+\textcolor{lmrryel}{yellow} & : & \textcolor{lmrryel}{lmrryel} \\
+\textcolor{lmrrred}{green} & : & \textcolor{lmrrred}{lmrrred} \\
+\textcolor{lmrrtrq}{turquoise} & : & \textcolor{lmrrtrq}{lmrrtrq} \\
  \end{tabular} 
 \end{center}
 
 \begin{figure}
 \begin{tikzpicture}
 \node[regular polygon, regular polygon sides=6, draw,
-inner sep=0.5cm, draw=ml2rblu, fill=ml2rblu] (blu) at (0,0) {};
+inner sep=0.5cm, draw=lmrrblu, fill=lmrrblu] (blu) at (0,0) {};
 \node[regular polygon, regular polygon sides=6, draw,
-inner sep=0.5cm, draw=ml2ryel, fill=ml2ryel] (yel) at (3,0) {};
+inner sep=0.5cm, draw=lmrryel, fill=lmrryel] (yel) at (3,0) {};
 \node[regular polygon, regular polygon sides=6, draw,
-inner sep=0.5cm, draw=ml2rgrn, fill=ml2rgrn] (grn) at (1.5,3) {};
+inner sep=0.5cm, draw=lmrrred, fill=lmrrred] (grn) at (1.5,3) {};
 \node[regular polygon, regular polygon sides=6, draw,
-inner sep=0.5cm, draw=ml2rtrq, fill=ml2rtrq] (trq) at (4.5,3) {};
-\node[above=3mm of blu.north east] {\textcolor{ml2rblu}{ml2rblu}};
-\node[above=3mm of yel.north east] {\textcolor{ml2ryel}{ml2ryel}};
-\node[below=3mm of grn.south east] {\textcolor{ml2rgrn}{ml2rgrn}};
-\node[below=3mm of trq.south east] {\textcolor{ml2rtrq}{ml2rtrq}};
+inner sep=0.5cm, draw=lmrrtrq, fill=lmrrtrq] (trq) at (4.5,3) {};
+\node[above=3mm of blu.north east] {\textcolor{lmrrblu}{lmrrblu}};
+\node[above=3mm of yel.north east] {\textcolor{lmrryel}{lmrryel}};
+\node[below=3mm of grn.south east] {\textcolor{lmrrred}{lmrrred}};
+\node[below=3mm of trq.south east] {\textcolor{lmrrtrq}{lmrrtrq}};
 \end{tikzpicture}
 \caption{A figure with our corporate design colors}
 \label{colors}
