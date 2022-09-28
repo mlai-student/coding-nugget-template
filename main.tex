@@ -6,14 +6,14 @@
 
 % set up pdf meta data
 \hypersetup{%
-  pdftitle={ML2R Coding Nuggets: Linear Programming},
+  pdftitle={Lamarr Institute Report: A Template},
   pdfauthor={Pascal Welke and Christian Bauckhage},
   pdfsubject={data science, machine learning, optimization, scientific python, numpy, scipy},
-  pdfkeywords={linear programming, robust regression, least absolute deviations}
+  pdfkeywords={latex colors, template documentation}
 }
 
 
-\title[Linear Programming for Robust Regression]{Lamarr Coding Nuggets \\ A Template}
+\title[Linear Programming for Robust Regression]{Lamarr Institute Report \\ A Template}
 
 
 % This is how you define multiple authors
@@ -34,8 +34,8 @@
 }
 
 \begin{abstract}
-The ML2R Coding Nugget template defines a common look and feel for ML2R coding nuggets. 
-The source code of this document shows how to use the ML2R Coding Nugget Template to produce nice documents.
+The Lamarr Institute Report template defines a common look and feel for Lamarr written documentation, such as Lamarr Coding Nuggets. 
+The source code of this document shows how to use the Lamarr Institute Report Template to produce nice documents.
 \end{abstract}
 
 \maketitle
@@ -43,6 +43,8 @@ The source code of this document shows how to use the ML2R Coding Nugget Templat
 
 
 \section{Introduction}
+
+One particular use case for this template are Coding Nuggets.
 Coding nuggets are currently (short) how-tos that show how to solve problems ``by foot'' in practice.
 The typical structure of such a paper consists of motivating a (machine learning) problem, showing how to formulate this problem in a particular way and then showing how to solve it practically using existing methods. 
 
@@ -57,20 +59,22 @@ Please refrain from changing the part, however, that is marked as non-optional.
 Below we give a short introduction to 
 
 \subsection{Colors}
-The preamble defines the ML2R corporate design colors that should be used throughout the document and within figures (cf. Fig.~\ref{colors}) to provide a common look and feel:
+The preamble defines the Lamarr Institute corporate design colors that should be used throughout the document and within figures (cf. Fig.~\ref{colors}) to provide a common look and feel:
 
 \vspace{0.5em}
 \begin{center}
 \begin{tabular}{lcl}
 \textcolor{lmrrblu}{blue} & : & \textcolor{lmrrblu}{lmrrblu} \\
 \textcolor{lmrryel}{yellow} & : & \textcolor{lmrryel}{lmrryel} \\
-\textcolor{lmrrred}{green} & : & \textcolor{lmrrred}{lmrrred} \\
+\textcolor{lmrrred}{red} & : & \textcolor{lmrrred}{lmrrred} \\
 \textcolor{lmrrtrq}{turquoise} & : & \textcolor{lmrrtrq}{lmrrtrq} \\
  \end{tabular} 
 \end{center}
 
 \begin{figure}
 \begin{tikzpicture}
+\node[regular polygon, regular polygon sides=6, draw, inner sep=0.5cm, draw=lmrrprime1, fill=lmrrprime1] (prime1) at (0,6) {};
+\node[regular polygon, regular polygon sides=6, draw, inner sep=0.5cm, draw=lmrrprime1, fill=lmrrprime2] (prime2) at (3,6) {};
 \node[regular polygon, regular polygon sides=6, draw,
 inner sep=0.5cm, draw=lmrrblu, fill=lmrrblu] (blu) at (0,0) {};
 \node[regular polygon, regular polygon sides=6, draw,
@@ -83,6 +87,9 @@ inner sep=0.5cm, draw=lmrrtrq, fill=lmrrtrq] (trq) at (4.5,3) {};
 \node[above=3mm of yel.north east] {\textcolor{lmrryel}{lmrryel}};
 \node[below=3mm of grn.south east] {\textcolor{lmrrred}{lmrrred}};
 \node[below=3mm of trq.south east] {\textcolor{lmrrtrq}{lmrrtrq}};
+\node[below=3mm of prime1.south east] {\textcolor{lmrrprime1}{lmrrprime1}};
+\node[below=3mm of prime2.south east, fill=lmrrprime1] {\textcolor{lmrrprime2}{lmrrprime2}};
+
 \end{tikzpicture}
 \caption{A figure with our corporate design colors}
 \label{colors}

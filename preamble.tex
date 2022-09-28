@@ -37,7 +37,7 @@
 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
-\renewcommand{\algorithmiccomment}[1]{{\color{DarkRed!90}// #1}}
+\renewcommand{\algorithmiccomment}[1]{{\color{lmrrtrq}// #1}}
 
 \usepackage{hyperref}
 \hypersetup{%
@@ -54,13 +54,13 @@
 \lstdefinestyle{pythonstyle}{%
   language=Python,
   tabsize=4,
-  backgroundcolor=\color{Gray!10},
+  backgroundcolor=\color{lmrrprime1!10},
   basicstyle=\ttfamily\scriptsize,
-  stringstyle=\color{ForestGreen},
-  keywordstyle=\color{BlueViolet},
-  commentstyle=\itshape\color{DarkRed!90},
+  stringstyle=\color{lmrrred},
+  keywordstyle=\color{lmrrblu},
+  commentstyle=\itshape\color{lmrrtrq},
   identifierstyle=,
-  emphstyle=\color{Blue},
+  emphstyle=\color{lmrrblu},
   frame=lines,	
   showstringspaces=false,
   morekeywords={range, len, self, other, lambda, from, import, as, False, True, 
@@ -74,11 +74,11 @@
   language=Python,
   tabsize=4,
   basicstyle=\ttfamily\small,
-  stringstyle=\color{ForestGreen},
-  keywordstyle=\color{BlueViolet},
-  commentstyle=\itshape\color{DarkRed!90},
+  stringstyle=\color{lmrrred},
+  keywordstyle=\color{lmrrblu},
+  commentstyle=\itshape\color{lmrrtrq},
   identifierstyle=,
-  emphstyle=\color{Blue},
+  emphstyle=\color{lmrrblu},
   %frame=l,	
   xleftmargin=1em,
   showstringspaces=false,
@@ -92,11 +92,11 @@
   language=Python,
   tabsize=4,
   basicstyle=\ttfamily\scriptsize,
-  stringstyle=\color{ForestGreen},
-  keywordstyle=\color{BlueViolet},
-  commentstyle=\itshape\color{DarkRed!90},
+  stringstyle=\color{lmrrred},
+  keywordstyle=\color{lmrrblu},
+  commentstyle=\itshape\color{lmrrtrq},
   identifierstyle=,
-  emphstyle=\color{Blue},
+  emphstyle=\color{lmrrblu},
   %frame=l,	
   xleftmargin=1em,
   showstringspaces=false,
@@ -110,7 +110,7 @@
 
 % only used for fig colors, may be removed if you don't need it
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, positioning}
+\usetikzlibrary{shapes.geometric, positioning, calc}
 
 %%% define convience commands
 % python stuff
@@ -130,7 +130,7 @@
 % text highlighting
 \newcommand{\alert}[1]{\emph{#1}}
 \newcommand{\ALERT}[1]{{\color{red}#1}}
-\newcommand{\keyword}[1]{\emph{\texttt{\color{blue}#1}}}
+\newcommand{\keyword}[1]{\emph{\texttt{\color{lmrrblu}#1}}}
 
 % vectors, matrices, and tensors
 \renewcommand{\vec}[1]{\bm{#1}}
